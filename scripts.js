@@ -7,8 +7,8 @@ var sprintFunctions = {
     return numArray[0];
   },
 
-  reversed: function(string){
-    return string.split('').reverse().join('');
+  reversed: function(str){
+    return str.split('').reverse().join('');
   },
 
   loudSnakeCase: function(str){
@@ -27,16 +27,44 @@ var sprintFunctions = {
     return snakeCase.join('');
   },
 
-  compareArrays: function(){
-    // your code here (replace the return)
-    return "Finish compareArrays first!"
+  compareArrays: function(arr1, arr2){
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+    return true;
   },
 
-  fizzBuzz: function(){
-    // your code here
+  fizzBuzz: function(input){
+    var inputArray = [];
+    for (i = 0; i < input; i++) {
+      inputArray[i] = i+1;
+    }
+    for (i = 0; i < inputArray.length; i++) {
+      if (inputArray[i] === 0) {
+        continue;
+      }
+      else if (inputArray[i] % 3 === 0 && inputArray[i] % 5 === 0) {
+        inputArray[i] = "FIZZBUZZ";
+      }
+      else if (inputArray[i] % 3 === 0) {
+        inputArray[i] = "FIZZ";
+      }
+      else if (inputArray[i] % 5 === 0) {
+        inputArray[i] = "BUZZ";
+      }
+      else {
+        continue;
+      }
+    }
+    return inputArray;
   },
 
-  myMap: function(){
+  myMap: function(inputArr,inputFunc){
     // your code here
   },
 
