@@ -71,7 +71,28 @@ var sprintFunctions = {
     return inputArray;
   },
 
-  primes: function(numArray){
+  primes: function(input){
+    // Thanks to Dyslexicon...this was a tough one!
+    var numArray = [];
+    var primes = [];
 
+    for (var i = 2; i < input; i++) {
+      numArray.push(i);
+    }
+
+    for (var n = 0; n < numArray.length; n++) {
+      var notPrime = [];
+      for (var num = 2; num < numArray[n]; num++) {
+        if (numArray[n] % num === 0) {
+          notPrime.push('');
+        }
+      }
+
+      if (!notPrime.length) {
+        primes.push(numArray[n]);
+      }
+    }
+    
+    return primes
   },
 }
