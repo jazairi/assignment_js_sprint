@@ -39,9 +39,9 @@ var sprintFunctions = {
     return true;
   },
 
-  fizzBuzz: function(input){
+  fizzBuzz: function(num){
     var inputArray = [];
-    for (i = 0; i < input; i++) {
+    for (i = 0; i < num; i++) {
       inputArray[i] = i+1;
     }
     for (i = 0; i < inputArray.length; i++) {
@@ -64,11 +64,14 @@ var sprintFunctions = {
     return inputArray;
   },
 
-  myMap: function(inputArr,inputFunc){
-    // your code here
+  myMap: function(inputArray,inputFunction){
+    for(i = 0; i < inputArray.length; i++) {
+      inputArray[i] = inputFunction(inputArray[i]);
+    }
+    return inputArray;
   },
 
-  primes: function(){
-    // your code here
+  primes: function(numArray){
+
   },
 }
